@@ -38,7 +38,7 @@ Then type the command below to install the Python library you need and the custo
 
 .. code-block:: bash
 
-   bash setup.py
+   bash setup.sh
 
 When it is finished, close that Terminal window and open a new one. You will need a terminal to use the custom scripts. To use them, just type :code:`my_script_name my_file`. For example:
 
