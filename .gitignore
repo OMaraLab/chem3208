@@ -1,0 +1,7 @@
+*~
+.vagrant
+.vscode
+**/.vscode
+.ipynb_checkpoints
+**/.ipynb_checkpoints
+docs/build
