@@ -1,6 +1,3 @@
----
-permalink: /index.html
----
 
 # CHEM3208 labs for molecular dynamics.
 
