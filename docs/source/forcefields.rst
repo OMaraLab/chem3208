@@ -243,19 +243,19 @@ In this part of the lab, you will explore the functional forms of force field te
    * a Taylor expansion to the third order
    * a Morse potential
 
-#. Use :code:`NonlinearModelFit` to fit your functions to your bond data, and plot each function. Then plot them all together, over your data points. 
+#. Use :code:`NonlinearModelFit` to fit your functions to your bond data, and plot each function. Then plot them all together, over your data points. **(3 marks)**
 #. Use MP2/6-31G* to simulate water at 300 K with an *Ab initio* molecular dynamics job, for 250 femtoseconds. Initiate with thermal velocities.
 #. Use the :code:`out_to_xyz` script to convert the output file to a xyz format. View your trajectory with VMD.
 #. Use the :code:`water_geometry` script to extract the bond lengths and angle values for each frame of the trajectory. Plot the values of the bonds and angles.
 #. Calculate the mean and standard deviation for the O-H bond length and the H-O-H angle value over the AIMD trajectory.
 #. Select the data points of your bond and angle potential energy scans within 3 standard deviations of the mean of the AIMD trajectory.
 #. Re-fit the functions from #4 to this subset of data. Compare the standard errors and the p-values with your earlier fits to the complete dataset.
-#. Plot the new fitted functions together, over the subset of the data points from the potential energy scan.
+#. Plot the new fitted functions together, over the subset of the data points from the potential energy scan. **(3 marks)**
 #. Fit a second order Taylor expansion the subset of your angle PES data.
 #. Combine your second-order Taylor expansions for your bonds and angle to create a potential energy function for water. Plot the potential energy surface (z-axis) created by the second order Taylor expansions over the change in O-H bond length (x-axis) and change in H-O-H angle value (y-axis).
 #. Calculate the potential energy of each frame of the AIMD trajectory with your function. Compare the shape of the plot to the MP2/6-31G* energy plot.
 #. Calculate the average difference between your calculated energy and the MP2 energy. What does this difference represent?
-#. Assign atom types, equilibrium bond values, bond force constants, equilibrium angle values, and equilibrium force constants to water. You have now created your own force field for a water molecule.
+#. Assign atom types, equilibrium bond values, bond force constants, equilibrium angle values, and equilibrium force constants to water. You have now created your own force field for a water molecule. **(3 marks)**
 
 Parametrising alanine
 =====================
@@ -272,16 +272,16 @@ Parametrising alanine
 Questions
 =========
 
-This is the total list of questions you should answer, which also includes the questions that were asked within the workbook. Please answer these in a text document and submit it as a PDF.
+This is the total list of questions you should answer, which also includes the questions that were asked within the workbook. Please answer these in a text document and submit it as a PDF. Include your two graphs where you compare the fits of functional forms to the bond data. (#5 and #12) **(6 marks)**
 
 #. Which functional form had the best fit to your overall bond data in the Parametrising Water section? Did this change once you fitted the function to a subset of the data? Which functional form do most force fields use, and why? **(4 marks)**
 #. What does the average difference between your calculated energy for water and the MP2 energy for water represent? **(1 mark)**
 #. What does the :code:`k` parameter define in a dihedral function? What is the phase shift and force constant of the O=CA-C-N dihedral in an alanine molecule? How did you find the force constant of the O=CA-C-N dihedral? **(4 marks)**
-#. How many non-bonded calculations do you have to complete for 3 molecules of alanine, when they are: all-atom, united-atom, or coarse-grained? **(3 marks)**
+#. How many non-bonded calculations do you have to complete for 3 molecules of alanine, when they are: all-atom, united-atom, or coarse-grained? What are the atom types for the all-atom and united-atom representations? **(7 marks)**
 #. There are two approaches to force field parametrisation. Which was followed in this lab? What is the other approach, and what is one reason we did not use that one? **(3 marks)**
 #. In this lab you used *ab initio* molecular dynamics (AIMD) simulations to help you choose parameters. Why is it infeasible to use *ab initio* methods for protein simulations? Make reference to the scaling of the computations required. What is one situation when you would need AIMD rather than classical MD, apart from when you need more accurate representations? **(3 marks)**
 #. List the 4 bonded and 2 non-bonded interactions that contribute to the potential energy function of a classical molecular dynamics simulation. Give the functional form that is most commonly used for each. **(6 marks)**
 #. Explain the concept of additivity as it applies to classical force fields. **(2 marks)**
 #. Explain the concept of transferability as it applies to classical force fields. **(2 marks)**
 
-**(Total 28 marks)**
+**(Total 38 marks)**
