@@ -1496,6 +1496,27 @@
     "\n",
     "**Total 21 marks**"
    ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## References"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "The molecular dynamics procedure image was adapted from the [one by Kai Nordlund](https://en.wikipedia.org/wiki/Molecular_dynamics#/media/File:Molecular_dynamics_algorithm.png). I added the highlights."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
   }
  ],
  "metadata": {
