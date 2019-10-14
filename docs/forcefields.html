@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Force fields &mdash; CHEM3208  documentation</title>
+  <title>Lab 5: Force fields &mdash; CHEM3208  documentation</title>
   
 
   
@@ -37,7 +37,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Lab 7: Molecular dynamics and analysis" href="md_analysis.html" />
+    <link rel="next" title="Lab 6: Molecular dynamics" href="06_md.html" />
     <link rel="prev" title="CHEM3208 resources" href="index.html" /> 
 </head>
 
@@ -84,7 +84,7 @@
             
               <p class="caption"><span class="caption-text">Molecular dynamics</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Force fields</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Lab 5: Force fields</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#aim">Aim</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#setup-and-scripts">Setup and scripts</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#vmd">VMD</a></li>
@@ -110,6 +110,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#questions">Questions</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="06_md.html">Lab 6: Molecular dynamics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="md_analysis.html">Lab 7: Molecular dynamics and analysis</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Resources</span></p>
@@ -160,7 +161,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Force fields</li>
+      <li>Lab 5: Force fields</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -203,8 +204,8 @@
     text-align: unset;
 }
 </style>
-<div class="section" id="force-fields">
-<h1>Force fields<a class="headerlink" href="#force-fields" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="lab-5-force-fields">
+<h1>Lab 5: Force fields<a class="headerlink" href="#lab-5-force-fields" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="aim">
 <h2>Aim<a class="headerlink" href="#aim" title="Permalink to this headline">¶</a></h2>
 <p>The aim of this lab is to:</p>
@@ -273,6 +274,7 @@ To submit this lab, please upload both your Mathematica notebook and a PDF inclu
 </div>
 <div class="section" id="iqmol-instructions">
 <h2>IQMol instructions<a class="headerlink" href="#iqmol-instructions" title="Permalink to this headline">¶</a></h2>
+<p>You may find it easier to download and edit files instead of constructing them yourselves.</p>
 <div class="section" id="potential-energy-scans">
 <h3>Potential energy scans<a class="headerlink" href="#potential-energy-scans" title="Permalink to this headline">¶</a></h3>
 <p>In this lab, we will use IQMol to submit the job. However, you will have create the file yourself, as IQMol has not actually implemented a way to create PES jobs via the Job Setup.</p>
@@ -291,13 +293,13 @@ $end
 <p>A frozen potential energy scan requires the input geometry to be in a Z-matrix format. A Z-matrix is a way to represent a molecule using “internal coordinates”, or by defining each atom by its relationship to another atom. Water is written in a Z-matrix format below:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$molecule
 0 1
-O
-H  1  r2
-H  1  r3  2  a3
+ O
+ H  1  r2
+ H  1  r3  2  a3
 
-r2= 0.1234
-r3= 0.1234
-a3= 0.1234
+ r2= 0.1234
+ r3= 0.1234
+ a3= 0.1234
 $end
 </pre></div>
 </div>
@@ -347,6 +349,7 @@ $end
 <p class="admonition-title">Important</p>
 <p>When you define your angle, make sure the central point of the angle is in the middle. e.g. for your H-O-H angle, your <code class="code docutils literal notranslate"><span class="pre">$scan</span></code> line should start off with <code class="code docutils literal notranslate"><span class="pre">bend</span>&#160; <span class="pre">2</span>&#160; <span class="pre">1</span>&#160; <span class="pre">3</span></code>.</p>
 </div>
+<p>Here is <a class="reference download internal" download="" href="_downloads/ec0804fa4c95f18979c95ae81034d04e/h2o_bond.inp"><code class="xref download docutils literal notranslate"><span class="pre">an</span> <span class="pre">example</span> <span class="pre">bond</span> <span class="pre">file</span></code></a> and <a class="reference download internal" download="" href="_downloads/758c3d13f655564ca46934ee1c039d6a/h2o_angle.inp"><code class="xref download docutils literal notranslate"><span class="pre">an</span> <span class="pre">example</span> <span class="pre">angle</span> <span class="pre">file</span></code></a>.</p>
 </div>
 </div>
 <div class="section" id="ab-initio-molecular-dynamics">
@@ -359,6 +362,7 @@ $end
 </div>
 <p>The time step is defined in atomic units. We want the simulation to have a time step of 0.5 femtoseconds (1 fs is <span class="math notranslate nohighlight">\(10^{-15}\)</span> seconds), which is approximately equal to 21 atomic units.</p>
 <p>Set the number of steps to 500 and submit the job.</p>
+<p>Here is <a class="reference download internal" download="" href="_downloads/ea68e030cb7468295e5d31ebe59c015b/h2o_aimd.inp"><code class="xref download docutils literal notranslate"><span class="pre">an</span> <span class="pre">example</span> <span class="pre">file</span></code></a>.</p>
 </div>
 </div>
 <div class="section" id="parametrising-water">
@@ -432,7 +436,7 @@ $end
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="md_analysis.html" class="btn btn-neutral float-right" title="Lab 7: Molecular dynamics and analysis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="06_md.html" class="btn btn-neutral float-right" title="Lab 6: Molecular dynamics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral float-left" title="CHEM3208 resources" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

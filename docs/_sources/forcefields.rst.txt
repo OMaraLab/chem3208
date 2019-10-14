@@ -2,9 +2,9 @@
 .. include:: <isonum.txt>
 .. include:: <isotech.txt>
 
-============
-Force fields
-============
+===================
+Lab 5: Force fields
+===================
 
 Aim
 ====
@@ -105,6 +105,8 @@ Here, :math:`D` is the dissociation energy and :math:`a` is related to the force
 IQMol instructions
 ====================
 
+You may find it easier to download and edit files instead of constructing them yourselves.
+
 Potential energy scans
 ----------------------
 
@@ -134,13 +136,13 @@ A frozen potential energy scan requires the input geometry to be in a Z-matrix f
 
    $molecule
    0 1
-   O
-   H  1  r2
-   H  1  r3  2  a3
+    O
+    H  1  r2
+    H  1  r3  2  a3
 
-   r2= 0.1234
-   r3= 0.1234
-   a3= 0.1234
+    r2= 0.1234
+    r3= 0.1234
+    a3= 0.1234
    $end
 
 
@@ -206,6 +208,7 @@ This section would specify that QChem should calculate the energy of the water m
 
    When you define your angle, make sure the central point of the angle is in the middle. e.g. for your H-O-H angle, your :code:`$scan` line should start off with :code:`bend  2  1  3`. 
 
+Here is :download:`an example bond file <files/forcefields/h2o_bond.inp>` and :download:`an example angle file <files/forcefields/h2o_angle.inp>`.
 
 *Ab initio* molecular dynamics
 ------------------------------
@@ -223,7 +226,7 @@ The time step is defined in atomic units. We want the simulation to have a time 
 
 Set the number of steps to 500 and submit the job.
 
-
+Here is :download:`an example file <files/forcefields/h2o_aimd.inp>`.
 
 
 Parametrising water
