@@ -7,6 +7,7 @@ CHEM3208 resources
    :caption: Molecular dynamics
 
    forcefields
+   md_analysis
 
 .. toctree::
    :maxdepth: 1
