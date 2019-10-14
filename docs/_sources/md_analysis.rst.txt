@@ -422,8 +422,18 @@ Open your file in VMD to check that there are water molecules there.
 
     Open :code:`topol.top` in a text editor after solution. How many solvent molecules (SOL) have you added? **(1 mark)**
 
+Simulation
+----------
 
 Now follow the same minimisation-equilibration-simulation pathway as the vacuum and implicit solvation simulations. Make sure you use the file :code:`solv.gro` instead of :code:`box.gro` for your minimisation step.
+
+However, when you run :code:`mdrun`, do not add the :code:`-nt 1` at the end (this will make your simulation much slower). Instead::
+
+    gmx grompp -f nvt.mdp -c em.gro -p topol.top -r em.gro -o eq.tpr
+    gmx mdrun -v -deffnm eq
+    gmx grompp -f md.mdp -c eq.gro -p topol.top -r eq.gro -o production.tpr
+    gmx mdrun -v -deffnm production
+
 
 Repeat the analyses of the vacuum simulation.
 
@@ -577,10 +587,12 @@ Open your file in VMD and check that your box is long in the z-axis::
 Type :code:`pbc box` in the Tk console.
 
 
-Simulating
+Simulation
 ----------
 
 Follow the minimisation-equilibration-simulation steps of the other simulations. Remember to use your newly created :code:`pull_box.gro` instead of :code:`box.gro`.
+
+Remember to add :code:`-nt 1` at the end of your :code:`mdrun` command. This is necessary for vacuum simulations.
 
 Analysis
 --------

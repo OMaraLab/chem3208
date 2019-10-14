@@ -112,6 +112,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#explicit-solvent">Explicit solvent</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#solvating-your-box">Solvating your box</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Simulation</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#steered-molecular-dynamics">Steered molecular dynamics</a><ul>
@@ -119,8 +120,8 @@
 <li class="toctree-l4"><a class="reference internal" href="#creating-a-position-restraint-file">Creating a position restraint file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#editing-your-topology-file">Editing your topology file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#creating-a-new-box">Creating a new box</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#simulating">Simulating</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id2">Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">Simulation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Analysis</a></li>
 </ul>
 </li>
 </ul>
@@ -663,7 +664,17 @@ To submit this lab, please answer the questions in a text document and submit a 
 <p class="admonition-title">Note</p>
 <p>Open <code class="code docutils literal notranslate"><span class="pre">topol.top</span></code> in a text editor after solution. How many solvent molecules (SOL) have you added? <strong>(1 mark)</strong></p>
 </div>
+</div>
+<div class="section" id="id2">
+<h4>Simulation<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <p>Now follow the same minimisation-equilibration-simulation pathway as the vacuum and implicit solvation simulations. Make sure you use the file <code class="code docutils literal notranslate"><span class="pre">solv.gro</span></code> instead of <code class="code docutils literal notranslate"><span class="pre">box.gro</span></code> for your minimisation step.</p>
+<p>However, when you run <code class="code docutils literal notranslate"><span class="pre">mdrun</span></code>, do not add the <code class="code docutils literal notranslate"><span class="pre">-nt</span> <span class="pre">1</span></code> at the end (this will make your simulation much slower). Instead:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmx</span> <span class="n">grompp</span> <span class="o">-</span><span class="n">f</span> <span class="n">nvt</span><span class="o">.</span><span class="n">mdp</span> <span class="o">-</span><span class="n">c</span> <span class="n">em</span><span class="o">.</span><span class="n">gro</span> <span class="o">-</span><span class="n">p</span> <span class="n">topol</span><span class="o">.</span><span class="n">top</span> <span class="o">-</span><span class="n">r</span> <span class="n">em</span><span class="o">.</span><span class="n">gro</span> <span class="o">-</span><span class="n">o</span> <span class="n">eq</span><span class="o">.</span><span class="n">tpr</span>
+<span class="n">gmx</span> <span class="n">mdrun</span> <span class="o">-</span><span class="n">v</span> <span class="o">-</span><span class="n">deffnm</span> <span class="n">eq</span>
+<span class="n">gmx</span> <span class="n">grompp</span> <span class="o">-</span><span class="n">f</span> <span class="n">md</span><span class="o">.</span><span class="n">mdp</span> <span class="o">-</span><span class="n">c</span> <span class="n">eq</span><span class="o">.</span><span class="n">gro</span> <span class="o">-</span><span class="n">p</span> <span class="n">topol</span><span class="o">.</span><span class="n">top</span> <span class="o">-</span><span class="n">r</span> <span class="n">eq</span><span class="o">.</span><span class="n">gro</span> <span class="o">-</span><span class="n">o</span> <span class="n">production</span><span class="o">.</span><span class="n">tpr</span>
+<span class="n">gmx</span> <span class="n">mdrun</span> <span class="o">-</span><span class="n">v</span> <span class="o">-</span><span class="n">deffnm</span> <span class="n">production</span>
+</pre></div>
+</div>
 <p>Repeat the analyses of the vacuum simulation.</p>
 </div>
 </div>
@@ -794,12 +805,13 @@ nr : group       !   &#39;name&#39; nr name   &#39;splitch&#39; nr    Enter: lis
 </div>
 <p>Type <code class="code docutils literal notranslate"><span class="pre">pbc</span> <span class="pre">box</span></code> in the Tk console.</p>
 </div>
-<div class="section" id="simulating">
-<h4>Simulating<a class="headerlink" href="#simulating" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id3">
+<h4>Simulation<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
 <p>Follow the minimisation-equilibration-simulation steps of the other simulations. Remember to use your newly created <code class="code docutils literal notranslate"><span class="pre">pull_box.gro</span></code> instead of <code class="code docutils literal notranslate"><span class="pre">box.gro</span></code>.</p>
+<p>Remember to add <code class="code docutils literal notranslate"><span class="pre">-nt</span> <span class="pre">1</span></code> at the end of your <code class="code docutils literal notranslate"><span class="pre">mdrun</span></code> command. This is necessary for vacuum simulations.</p>
 </div>
-<div class="section" id="id2">
-<h4>Analysis<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id4">
+<h4>Analysis<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
 <p>Create your H-bond graph and secondary structure graph. Attach these to your report and comment on them.</p>
 <p><strong>Force profile</strong></p>
 <p>Your simulation will have created two files:</p>
