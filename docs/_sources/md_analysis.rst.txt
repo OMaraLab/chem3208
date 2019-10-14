@@ -332,7 +332,7 @@ Then click the RMSD button. You should see a plot come up. Does the RMSD value c
 
 .. note::
 
-    Comment on your RMSD and what it indicates about your peptide. If the RMSD fluctuates a lot, this indicates that the molecule stabilised into a conformation. **(1 mark)**
+    Comment on your RMSD and what it indicates about your peptide. If the RMSD fluctuates a lot, this indicates that the molecule has not stabilised into a conformation. **(1 mark)**
 
 **H-bonds**
 
@@ -606,7 +606,7 @@ Your simulation will have created two files:
     * pull_pullf.xvg : The pull force over time (kJ/mol/nm)
     * pull_pullx.xvg : The distance between your CA atom of the first and last residues over time (nm)
 
-Open these in a text editor. Copy the data into Excel and create a graph of the pull force (y-axi) over the distance (x-axis). This can be considered a force profile over the distance between the first and last residues.
+Open these in a text editor. Copy the data into Excel and create a graph of the pull force (y-axis) over the distance (x-axis). This can be considered a force profile over the distance between the first and last residues.
 
 .. note::
 
@@ -674,7 +674,8 @@ Questions
     #. Compare your solvent-accessible surface area plots for your simulations in vacuum, implicit solvent, and explicit solvent. **(2 marks)**
     #. Compare your secondary structures for your simulations in vacuum, implicit solvent, and explicit solvent. Are there any differences? **(2 marks)**
     #. What is the one line that is different in the :code:`md.mdp` files between the vacuum and implicit solvent simulations? **(1 mark)**
-    #. You used the enhanced sampling method, steered molecular dynamics, to generate a force profile. This is not a potential of mean force. What is one technique that can generate a potential of mean force? What does a potential of mean force tell us? **(2 marks)**
+    #. How many solvent molecules did you add to your explicit solvation simulation? **(1 mark)**
+    #. You used the enhanced sampling method, steered molecular dynamics, to generate a force profile. This is not a potential of mean force. What is one technique that can generate a potential of mean force? **(1 mark)**
 
 **Total: 40 marks**
 
