@@ -114,6 +114,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#explicit-solvent">Explicit solvent</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#solvating-your-box">Solvating your box</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id2">Simulation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">Analysis</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#steered-molecular-dynamics">Steered molecular dynamics</a><ul>
@@ -121,8 +122,8 @@
 <li class="toctree-l4"><a class="reference internal" href="#creating-a-position-restraint-file">Creating a position restraint file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#editing-your-topology-file">Editing your topology file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#creating-a-new-box">Creating a new box</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id3">Simulation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id4">Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Simulation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">Analysis</a></li>
 </ul>
 </li>
 </ul>
@@ -433,7 +434,7 @@ To submit this lab, please answer the questions in a text document and submit a 
 </div>
 <p>The letters J, B, O, U, X, and Z are not covered by the eukaryotic amino acid alphabet. You may like to substitute O -&gt; Q, U -&gt; V, and J -&gt; I. The letter B is often used to mean “either asparagine (N) or aspartic acid (D)” and Z is often used to mean “either glutamine (Q) or glutamic acid (E)”. You could also choose a different phrase.</p>
 <p>Open Pymol by typing <code class="code docutils literal notranslate"><span class="pre">pymol</span></code> in a Terminal window.</p>
-<p>Turn on Display &gt; Sequence.</p>
+<p>Turn on Display &gt; Sequence On.</p>
 <img alt="_images/pymol_sequence.png" src="_images/pymol_sequence.png" />
 <p>Then build your peptide by using the keyboard shortcuts Alt + (letter of your choice). Check your sequence to make sure you have correctly added the new amino acid. Sometimes this is not successful and you will have to use the Build &gt; Residue menu to choose the residue manually.</p>
 <img alt="_images/pymol_build.png" src="_images/pymol_build.png" />
@@ -494,7 +495,7 @@ To submit this lab, please answer the questions in a text document and submit a 
 <div><ul class="simple">
 <li><p>topol.top</p></li>
 <li><p>posre.itp</p></li>
-<li><p>box.itp</p></li>
+<li><p>box.gro</p></li>
 </ul>
 </div></blockquote>
 </div>
@@ -580,16 +581,16 @@ To submit this lab, please answer the questions in a text document and submit a 
 </pre></div>
 </div>
 <p>Open the Representations window with Graphics &gt; Representations.</p>
-<img alt="_images/vmd_graphics.png" src="_images/vmd_graphics.png" />
+<a class="reference internal image-reference" href="_images/vmd_graphics.png"><img alt="_images/vmd_graphics.png" class="align-center" src="_images/vmd_graphics.png" style="width: 477.0px; height: 112.0px;" /></a>
 <p>In Drawing Method, select Cartoon.</p>
-<img alt="_images/vmd_cartoon.png" src="_images/vmd_cartoon.png" />
+<a class="reference internal image-reference" href="_images/vmd_cartoon.png"><img alt="_images/vmd_cartoon.png" class="align-center" src="_images/vmd_cartoon.png" style="width: 315.0px; height: 384.0px;" /></a>
 <p>Press play on the VMD Main menu. What do you see?</p>
 <p>If your peptide is tumbling around a lot, go to Extensions &gt; Analysis &gt; RMSD Trajectory Tool. Tick the Backbone box in Selection Modifiers and select ALIGN.</p>
 <p>The following few analysis tools are all in VMD.</p>
 <p><strong>RMSD</strong></p>
 <p>The Root Mean Square Deviation (RMSD) in atomic positions between two structures measures the average distance between atoms of superimposed proteins. In the RMSD Trajectory Tool, click ALIGN (if you haven’t already) to align the protein on the backbone atoms of the first frame.</p>
 <p>Tick the Plot box and the Save boxes in the Trajectory section.</p>
-<img alt="_images/vmd_rmsd.png" src="_images/vmd_rmsd.png" />
+<a class="reference internal image-reference" href="_images/vmd_rmsd.png"><img alt="_images/vmd_rmsd.png" class="align-center" src="_images/vmd_rmsd.png" style="width: 513.0px; height: 472.0px;" /></a>
 <p>Then click the RMSD button. You should see a plot come up. Does the RMSD value converge to a value, and if so, which value?</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -617,7 +618,7 @@ To submit this lab, please answer the questions in a text document and submit a 
 <p>Include the resulting plot in your report <strong>(1 mark)</strong> and comment on the secondary structure motifs that you can see <strong>(1 mark)</strong>.</p>
 </div>
 <p>Here is a key of the colours:</p>
-<img alt="_images/dssp_key.png" src="_images/dssp_key.png" />
+<a class="reference internal image-reference" href="_images/dssp_key.png"><img alt="_images/dssp_key.png" class="align-center" src="_images/dssp_key.png" style="width: 310.79999999999995px; height: 190.39999999999998px;" /></a>
 <p>Either screenshot your plot with command+shift+4 or save it with File &gt; Print to file.</p>
 <p><strong>Solvent-accessible surface area</strong></p>
 <p>This following analysis is done in Terminal with GROMACS commands:</p>
@@ -676,6 +677,11 @@ To submit this lab, please answer the questions in a text document and submit a 
 <span class="n">gmx</span> <span class="n">mdrun</span> <span class="o">-</span><span class="n">v</span> <span class="o">-</span><span class="n">deffnm</span> <span class="n">production</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="id3">
+<h4>Analysis<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<p>When you open this file in VMD, you may notice a lot of water obscuring the motion of the peptide. You can change the selection in the Graphics &gt; Representation menu from “all” to “not water”.</p>
+<a class="reference internal image-reference" href="_images/vmd_selection.png"><img alt="_images/vmd_selection.png" class="align-center" src="_images/vmd_selection.png" style="width: 311.0px; height: 457.0px;" /></a>
 <p>Repeat the analyses of the vacuum simulation.</p>
 </div>
 </div>
@@ -687,6 +693,7 @@ To submit this lab, please answer the questions in a text document and submit a 
 <ul class="simple">
 <li><p>production.gro</p></li>
 <li><p>topol.top</p></li>
+<li><p>posre.itp</p></li>
 </ul>
 <p>Change directory into your <code class="code docutils literal notranslate"><span class="pre">pulling</span></code> folder.</p>
 <div class="section" id="creating-an-index-file">
@@ -806,13 +813,16 @@ nr : group       !   &#39;name&#39; nr name   &#39;splitch&#39; nr    Enter: lis
 </div>
 <p>Type <code class="code docutils literal notranslate"><span class="pre">pbc</span> <span class="pre">box</span></code> in the Tk console.</p>
 </div>
-<div class="section" id="id3">
-<h4>Simulation<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
-<p>Follow the minimisation-equilibration-simulation steps of the other simulations. Remember to use your newly created <code class="code docutils literal notranslate"><span class="pre">pull_box.gro</span></code> instead of <code class="code docutils literal notranslate"><span class="pre">box.gro</span></code>.</p>
-<p>Remember to add <code class="code docutils literal notranslate"><span class="pre">-nt</span> <span class="pre">1</span></code> at the end of your <code class="code docutils literal notranslate"><span class="pre">mdrun</span></code> command. This is necessary for vacuum simulations.</p>
-</div>
 <div class="section" id="id4">
-<h4>Analysis<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<h4>Simulation<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<p>Follow the minimisation-equilibration-simulation steps of the other simulations. Remember to use your newly created <code class="code docutils literal notranslate"><span class="pre">pull_box.gro</span></code> instead of <code class="code docutils literal notranslate"><span class="pre">box.gro</span></code>, and the MDP files <code class="code docutils literal notranslate"><span class="pre">nvt_pull.mdp</span></code> and <code class="code docutils literal notranslate"><span class="pre">md_pull.mdp</span></code>. You also need to include your newly created index file when you get to the simulation stage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gmx</span> <span class="n">grompp</span> <span class="o">-</span><span class="n">f</span> <span class="n">md_pull</span><span class="o">.</span><span class="n">mdp</span> <span class="o">-</span><span class="n">c</span> <span class="n">eq</span><span class="o">.</span><span class="n">gro</span> <span class="o">-</span><span class="n">p</span> <span class="n">topol</span><span class="o">.</span><span class="n">top</span> <span class="o">-</span><span class="n">o</span> <span class="n">pull</span><span class="o">.</span><span class="n">tpr</span> <span class="o">-</span><span class="n">n</span> <span class="n">index</span><span class="o">.</span><span class="n">ndx</span>
+<span class="n">gmx</span> <span class="n">mdrun</span> <span class="o">-</span><span class="n">v</span> <span class="o">-</span><span class="n">deffnm</span> <span class="n">pull</span> <span class="o">-</span><span class="n">nt</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h4>Analysis<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
 <p>Create your H-bond graph and secondary structure graph. Attach these to your report and comment on them.</p>
 <p><strong>Force profile</strong></p>
 <p>Your simulation will have created two files:</p>

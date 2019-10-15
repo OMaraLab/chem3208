@@ -126,7 +126,7 @@ The letters J, B, O, U, X, and Z are not covered by the eukaryotic amino acid al
 
 Open Pymol by typing :code:`pymol` in a Terminal window.
 
-Turn on Display > Sequence. 
+Turn on Display > Sequence On. 
 
 .. image:: images/pymol_sequence.png
 
@@ -199,7 +199,7 @@ Copy these files into your :code:`vac/`, :code:`impsol/`, and :code:`expsol` dir
 
     * topol.top
     * posre.itp
-    * box.itp
+    * box.gro
 
 ------
 Vacuum
@@ -305,10 +305,14 @@ Open your trajectory in VMD::
 Open the Representations window with Graphics > Representations.
 
 .. image:: images/vmd_graphics.png
+    :scale: 50%
+    :align: center
 
 In Drawing Method, select Cartoon. 
 
 .. image:: images/vmd_cartoon.png
+    :scale: 50%
+    :align: center
 
 Press play on the VMD Main menu. What do you see?
 
@@ -323,6 +327,8 @@ The Root Mean Square Deviation (RMSD) in atomic positions between two structures
 Tick the Plot box and the Save boxes in the Trajectory section. 
 
 .. image:: images/vmd_rmsd.png
+    :scale: 50%
+    :align: center
 
 Then click the RMSD button. You should see a plot come up. Does the RMSD value converge to a value, and if so, which value?
 
@@ -359,6 +365,8 @@ The formation of characteristic secondary structure motifs is an important step 
 Here is a key of the colours:
 
 .. image:: images/dssp_key.png
+    :scale: 70%
+    :align: center
 
 Either screenshot your plot with command+shift+4 or save it with File > Print to file.
 
@@ -435,6 +443,15 @@ However, when you run :code:`mdrun`, do not add the :code:`-nt 1` at the end (th
     gmx mdrun -v -deffnm production
 
 
+Analysis
+--------
+
+When you open this file in VMD, you may notice a lot of water obscuring the motion of the peptide. You can change the selection in the Graphics > Representation menu from "all" to "not water".
+
+.. image:: images/vmd_selection.png
+    :scale: 50%
+    :align: center
+
 Repeat the analyses of the vacuum simulation.
 
 --------------------------
@@ -449,6 +466,7 @@ To start off, copy these files into your :code:`vac/pulling/` folder:
 
 * production.gro
 * topol.top
+* posre.itp
 
 Change directory into your :code:`pulling` folder.
 
@@ -590,9 +608,10 @@ Type :code:`pbc box` in the Tk console.
 Simulation
 ----------
 
-Follow the minimisation-equilibration-simulation steps of the other simulations. Remember to use your newly created :code:`pull_box.gro` instead of :code:`box.gro`.
+Follow the minimisation-equilibration-simulation steps of the other simulations. Remember to use your newly created :code:`pull_box.gro` instead of :code:`box.gro`, and the MDP files :code:`nvt_pull.mdp` and :code:`md_pull.mdp`. You also need to include your newly created index file when you get to the simulation stage::
 
-Remember to add :code:`-nt 1` at the end of your :code:`mdrun` command. This is necessary for vacuum simulations.
+    gmx grompp -f md_pull.mdp -c eq.gro -p topol.top -o pull.tpr -n index.ndx
+    gmx mdrun -v -deffnm pull -nt 1
 
 Analysis
 --------

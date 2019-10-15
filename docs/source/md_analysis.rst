@@ -199,7 +199,7 @@ Copy these files into your :code:`vac/`, :code:`impsol/`, and :code:`expsol` dir
 
     * topol.top
     * posre.itp
-    * box.itp
+    * box.gro
 
 ------
 Vacuum
